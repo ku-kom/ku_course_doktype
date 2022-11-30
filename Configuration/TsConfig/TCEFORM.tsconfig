@@ -13,11 +13,16 @@ TCEFORM {
    }
 }
 
-
-[usergroup = 2]
+[usergroup = 1]
    TCEFORM {
-      pages.116 {
-         ku_course_starttime.disabled = 1
+      pages {
+         ku_course_starttime {
+            types {
+               116 {
+                  disabled = 1
+               }
+            }
+         }
       }
    }
 [end]

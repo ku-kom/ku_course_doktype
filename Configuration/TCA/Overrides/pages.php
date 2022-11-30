@@ -8,7 +8,7 @@
 
 defined('TYPO3') or die('Access denied.');
 
-(function ($extKey='ku_course_doktype', $table='pages') {
+call_user_func(function ($extKey='ku_course_doktype', $table='pages') {
     $courseDoktype = 116;
  
     // Add new page type as possible select item:
@@ -44,4 +44,67 @@ defined('TYPO3') or die('Access denied.');
             ]
         ]
     );
-})();
+
+    // Register fields
+    $GLOBALS['TCA']['pages']['columns'] = array_replace_recursive(
+        $GLOBALS['TCA']['pages']['columns'],
+        [
+            'ku_course_about' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_about',
+                'description' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_details',
+                'config' => [
+                    'type' => 'text',
+                    'enableRichtext' => true,
+                    'rows' => 15,
+                ],
+            ],
+            'ku_course_starttime' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_starttime',
+                'description' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_add_starttime',
+                'config' => [
+                    'type' => 'input',
+                    'renderType' => 'inputDateTime',
+                    'dbType' => 'date',
+                    'eval' => 'date',
+                ],
+            ],
+            'ku_course_level' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_level',
+                'description' => 'LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_add_level',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        [
+                            '--',
+                            0,
+                        ],
+                        [
+                            'Bachelor',
+                            1,
+                        ],
+                        [
+                            'Kandidat',
+                            2,
+                        ],
+                        [
+                            'Master',
+                            2,
+                        ],
+                    ],
+                ],
+            ],
+        ]
+    );
+
+    // Make fields visible in a new Course details tab:
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'pages',
+        '--div--;LLL:EXT:'. $extKey .'/Resources/Private/Language/locallang_be.xlf:ku_course_tab,ku_course_about,ku_course_starttime, ku_course_level',
+        116, // Course doktype id.
+        ''
+    );
+});

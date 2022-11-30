@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-11-23UTC07:12:050">
+        <header>
+            <authorName>Nanna Ellegaard</authorName>
+            <authorEmail>nel@adm.ku.dk</authorEmail>
+        </header>
+        <body>
+        <trans-unit id="ku_course_tab">
+            <source>Course details</source>
+        </trans-unit>
+        <trans-unit id="ku_course_about">
+            <source>About the course</source>
+        </trans-unit>
+        <trans-unit id="ku_course_details">
+            <source>Longer text describing the course.</source>
+        </trans-unit>
+        <trans-unit id="ku_course_starttime">
+            <source>Course start date</source>
+        </trans-unit>
+        <trans-unit id="ku_course_add_starttime">
+            <source>Add course start date.</source>
+        </trans-unit>
+        <trans-unit id="ku_course_level">
+            <source>Course level</source>
+        </trans-unit>
+        <trans-unit id="ku_course_add_level">
+            <source>Add course level.</source>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

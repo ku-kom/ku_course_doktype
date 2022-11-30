@@ -11,9 +11,6 @@ TCEFORM {
    // endtime.disabled  = 1
    // starttime.disabled  = 1
    }
-   tt_content {
-      
-   }
 }
 
 

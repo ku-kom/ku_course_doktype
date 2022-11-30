@@ -78,22 +78,10 @@ call_user_func(function ($extKey='ku_course_doktype', $table='pages') {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [
-                            '--',
-                            0,
-                        ],
-                        [
-                            'Bachelor',
-                            1,
-                        ],
-                        [
-                            'Kandidat',
-                            2,
-                        ],
-                        [
-                            'Master',
-                            2,
-                        ],
+                        ['----',''],
+                        ['Bachelor',1],
+                        ['Kandidat',2],
+                        ['Master',2],
                     ],
                 ],
             ],

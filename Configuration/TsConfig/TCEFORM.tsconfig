@@ -13,7 +13,7 @@ TCEFORM {
    }
 }
 
-[usergroup = 1]
+#[usergroup = 1]
    TCEFORM {
       pages {
          ku_course_starttime {
@@ -23,6 +23,20 @@ TCEFORM {
                }
             }
          }
+         ku_course_about {
+            types {
+               116 {
+                  disabled = 1
+               }
+            }
+         }
+         ku_course_level {
+            types {
+               116 {
+                  disabled = 1
+               }
+            }
+         }
       }
    }
-[end]
+#[end]

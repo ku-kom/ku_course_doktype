@@ -8,7 +8,7 @@
 
 defined('TYPO3') or die('Access denied.');
 
-(function ($extKey='ku_course_doktype') {
+(function () {
     $courseDoktype = 116;
  
     // Add new page type:

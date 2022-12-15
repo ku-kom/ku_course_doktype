@@ -1,1 +1,1 @@
-@import "EXT:ku_course_doktype/Configuration/TsConfig/Page/*"
+@import "EXT:ku_course_doktype/Configuration/TsConfig/*"
